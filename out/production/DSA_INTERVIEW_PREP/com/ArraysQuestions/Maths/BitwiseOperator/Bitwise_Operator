@@ -1,0 +1,27 @@
+=> Bitwise Operator
+
+1) AND (&) -->
+        - results to true, if both the values are true, else returns false
+        Observation :
+        - when you & 1 with any number, digits remain the same
+        eg: 11001010
+           &11111111
+           ----------
+       ans  11001010 --> as you can see that the digits remained same as input --> 11001010
+
+2) OR (|) -->
+        - if any one is true, then entire expression is true
+
+3) XOR (^) --> VVVVVIMP --> Exclusive OR
+        - it means if and only if
+        - only one should be true
+        Observation :
+        - a^1 getting compliment of the number -a
+        - a^0 = a
+        - a^a = 0
+
+4) Compliment (!) -->
+        - it gives compliment of the expression
+        eg: 11001011 --> 00110100
+
+=> Number systems
