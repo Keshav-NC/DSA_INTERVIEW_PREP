@@ -15,7 +15,7 @@ public class RotatedBinarySearch {
         if (target == nums[mid]) {
             return mid;
         }
-        // left side of the array is sorted
+        // case1 --> left side of the array is sorted
         if (nums[start] <= nums[mid]) {
             if (target >= nums[start] && target < nums[mid]) {
                 return search(nums, target, start, mid - 1);
@@ -23,11 +23,11 @@ public class RotatedBinarySearch {
                 return search(nums, target, mid + 1, end);
             }
         }
-        
+        // case2 --> check rhs
         if (nums[mid] > nums[end] && target >= nums[mid] && target < nums[end]) {
             return search(nums, target, mid + 1, end);
-        } else {
-            return search(nums, target, start, mid-1);
         }
+        // case3
+        return search(nums, target, start, mid-1);
     }
 }

@@ -1,27 +1,39 @@
 public class checkProblems {
     public static void main(String[] args) {
-        reverseBinary();
+//        rangeOfTwoThreeFour();
+        kthBit(3);
     }
 
-    static void rangeOfTwoThree () {
+    static void rangeOfTwoThreeFour () {
         long n = (long) Math.pow (2, 31) - 1;
         long x = 1;
         long i = 0;
 //        // for power of 3
 //        while (x <= n) {
-//            System.out.println(x);
+//            System.out.println(i);
 //            i+=1;
 //            x = (long) Math.pow (3, i);
 //        }
 
-        // for power of 2
+//        // for power of 2
+//        while (x <= n) {
+//            System.out.println(i);
+//            i += 1;
+//            x = (long) Math.pow (2, i);
+//        }
 
+        // for power of 4
         while (x <= n) {
-            System.out.println(i);
+            System.out.println(i);;
             i += 1;
-            x = (long) Math.pow (2, i);
+            x = (int) Math.pow (4, i);
         }
     }
+
+    static void kthBit (int num) {
+        System.out.println(Integer.toBinaryString(num));
+    }
+
 
     static void decimalToBinary () {
         int n = 11;
