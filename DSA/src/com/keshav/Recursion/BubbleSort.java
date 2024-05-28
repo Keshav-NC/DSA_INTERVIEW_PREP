@@ -9,21 +9,21 @@ public class BubbleSort {
         System.out.println(Arrays.toString(nums));
     }
 
-    static void sort (int[] nums, int curIndex, int nextIndex) {
+    static void sort (int[] nums, int lastIndex, int curIndex) {
 
-        if (curIndex == 0) {
+        if (lastIndex == 0) {
             return;
         }
-        if (nextIndex < curIndex) {
-            if (nums[nextIndex] > nums[++nextIndex]) {
+        if (curIndex < lastIndex) {
+            if (nums[curIndex] > nums[lastIndex]) {
                 // swap
-                int temp = nums[nextIndex];
-                nums[nextIndex] = nums[curIndex];
-                nums[curIndex] = temp;
+                int temp = nums[curIndex];
+                nums[curIndex] = nums[lastIndex];
+                nums[lastIndex] = temp;
             }
-            sort(nums, curIndex, ++nextIndex);
+            sort(nums, lastIndex, ++curIndex);
         } else {
-            sort(nums, --curIndex, 0);
+            sort(nums, --lastIndex, 0);
         }
     }
 }
