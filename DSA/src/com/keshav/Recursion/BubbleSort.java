@@ -9,7 +9,7 @@ public class BubbleSort {
         System.out.println(Arrays.toString(nums));
     }
 
-    static void sort (int[] nums, int lastIndex, int curIndex) {
+    static void sort (int[] nums, int curIndex, int lastIndex) {
 
         if (lastIndex == 0) {
             return;
@@ -18,12 +18,12 @@ public class BubbleSort {
             if (nums[curIndex] > nums[curIndex+1]) {
                 // swap
                 int temp = nums[curIndex];
-                nums[curIndex] = nums[lastIndex];
-                nums[lastIndex] = temp;
+                nums[curIndex] = nums[curIndex+1];
+                nums[curIndex+1] = temp;
             }
-            sort(nums, lastIndex, ++curIndex);
+            sort(nums, ++curIndex, lastIndex);
         } else {
-            sort(nums, --lastIndex, 0);
+            sort(nums, 0, --lastIndex);
         }
     }
 }
