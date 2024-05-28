@@ -15,7 +15,7 @@ public class BubbleSort {
             return;
         }
         if (curIndex < lastIndex) {
-            if (nums[curIndex] > nums[lastIndex]) {
+            if (nums[curIndex] > nums[curIndex+1]) {
                 // swap
                 int temp = nums[curIndex];
                 nums[curIndex] = nums[lastIndex];
