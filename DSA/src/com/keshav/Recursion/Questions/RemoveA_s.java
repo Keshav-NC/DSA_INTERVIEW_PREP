@@ -2,13 +2,16 @@ package com.keshav.Recursion.Questions;
 
 public class RemoveA_s {
     public static void main(String[] args) {
-        String str = "baccad";
-        System.out.println(helper(str));
+        String str = "baappledfg";
+        System.out.println(skip(str));
     }
 
-    static String removeA_s (String str) {
-        return helperWithAnsArgs("", str);
+    static String skip(String str) {
+//        return helperWithAnsArgs("", str);
+        return helperApple (str);
     }
+
+    // Note : str.substring --> skips the first from till the mentioned index characters
 
     static String helperWithAnsArgs(String ans, String str) {
         if (str.isEmpty()) {
@@ -31,5 +34,17 @@ public class RemoveA_s {
             return helper(str.substring(1));
         }
         return str.charAt(0) + helper(str.substring(1));
+    }
+
+    static String helperApple (String str) {
+        if (str.isEmpty()) {
+            return "";
+        }
+
+        if (str.startsWith("apple")) {
+            // skips the first five letters, apple size = 5
+            return helperApple(str.substring(5));
+        }
+        return str.charAt(0) + helperApple(str.substring(1));
     }
 }
