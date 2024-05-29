@@ -15,6 +15,8 @@ public class InsertionSort {
     static void insertionSort (int[] arr) {
         for (int i=0;i<arr.length-1;i++) {
             for (int j = i+1; j > 0 ; j--) {
+                // check if the element at current index is lesser than the previous element,
+                // if true than swap it with the that element
                 if (arr[j] < arr[j-1]) {
                     swap(arr, j, j-1);
                 } else {

@@ -20,17 +20,22 @@ public class SelectionSort {
     }
 
     static void sort2 (int[] nums, int curIndex, int lastIndex, int max) {
+        // after lastIndex reaches 0th index just return
         if (lastIndex == 0) {
             return;
         }
-
+        // check if the current index is lesser than the last index
         if (curIndex < lastIndex) {
+            // check if element at current index is greater than the max element,
+            // if current element is greater, then update the max element (max = curIndex), then move to the next element curIndex++,
+            // if current element is lesser, than don't update max element, then move to next element
             if (nums[curIndex] > nums[max]) {
-                sort2(nums, ++curIndex, lastIndex, curIndex);
+                sort2(nums, curIndex+1, lastIndex, curIndex);
             } else {
-                sort2(nums, ++curIndex, lastIndex, max);
+                sort2(nums, curIndex+1, lastIndex, max);
             }
-        } else {
+        } else { // after finding the max element, swap that element to its correct index i.e, lastIndex,
+                 // after swap, then decrement the lastIndex by 1
             swap(nums, lastIndex, max);
             sort2(nums, 0, --lastIndex, 0);
         }
