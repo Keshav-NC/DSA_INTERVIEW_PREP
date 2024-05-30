@@ -11,7 +11,7 @@ public class MergeSort {
     }
 
     static int[] mergeSort (int[] nums) {
-        // if array length reaches index 1, just return the array
+        // if array length is equals to 1, just return the array
         if (nums.length == 1) {
             return nums;
         }
