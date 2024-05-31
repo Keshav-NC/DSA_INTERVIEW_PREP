@@ -1,8 +1,14 @@
+import java.util.Arrays;
+
 public class checkProblems {
     public static void main(String[] args) {
 //        rangeOfTwoThreeFour();
-        kthBit(3);
+//        kthBit(3);
+        int[] nums = {1, 2, 3};
+        int[] ans = new int[2*nums.length];
+
     }
+
 
     static void rangeOfTwoThreeFour () {
         long n = (long) Math.pow (2, 31) - 1;
