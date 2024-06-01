@@ -1,28 +1,29 @@
 package com.keshav.Recursion.Questions;
 
-public class RemoveA_s {
+public class Stream {
     public static void main(String[] args) {
         String str = "baappledfg";
         System.out.println(skip(str));
     }
 
     static String skip(String str) {
-//        return helperWithAnsArgs("", str);
-        return helperApple (str);
+        return helperWithAnsArgs("", str);
+//        return helperApple (str);
     }
 
-    // Note : str.substring --> skips the first from till the mentioned index characters
+    // Note : str.substring --> skips characters from start index till the mentioned index.
 
-    static String helperWithAnsArgs(String ans, String str) {
-        if (str.isEmpty()) {
-            return ans;
+    static String helperWithAnsArgs(String processed, String unprocessed) {
+        if (unprocessed.isEmpty()) {
+            return processed;
+        }
+        // skip if char 'a' found, don't add it to processed
+        if (unprocessed.charAt(0) == 'a') {
+           return helperWithAnsArgs(processed, unprocessed.substring(1));
         }
 
-        if (str.charAt(0) == 'a') {
-           return helperWithAnsArgs(ans, str.substring(1));
-        }
-
-        return helperWithAnsArgs(ans + str.charAt(0), str.substring(1));
+        // else add to processed
+        return helperWithAnsArgs(processed + unprocessed.charAt(0), unprocessed.substring(1));
     }
 
     static  String helper (String str) {
