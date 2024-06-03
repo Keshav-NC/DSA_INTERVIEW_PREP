@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Subsequences {
     public static void main(String[] args) {
-//        subSequence("", "abc");
+        subSequence("", "abc");
 //        subSeqAscii("", "abc");
         System.out.println(subSeqAsciiAL("", "abc"));
 
@@ -75,10 +75,10 @@ public class Subsequences {
 
         ArrayList<String> first = subSeqAsciiAL(processed + ch, unprocessed.substring(1));
         ArrayList<String> second = subSeqAsciiAL(processed, unprocessed.substring(1));
-        ArrayList<String> third= subSeqAsciiAL(processed + (int)(ch), unprocessed.substring(1));
+//        ArrayList<String> third= subSeqAsciiAL(processed + (int)(ch), unprocessed.substring(1));
 
         first.addAll(second);
-        first.addAll(third);
+//        first.addAll(third);
         return first;
     }
 }
