@@ -11,12 +11,15 @@ public class Transpose {
     }
 
     static int[][] transpose (int[][] matrix) {
-        int[][] t = new int[matrix.length][matrix.length];
-        for (int row=0;row<matrix.length;row++) {
-            for (int col=0;col<matrix[row].length;col++) {
-                t[col][row] = matrix[col][row];
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int[][] transpose = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                transpose[j][i] = matrix[i][j];
             }
         }
-        return t;
+        return transpose;
     }
+
 }
