@@ -32,12 +32,12 @@ public class PhonePad {
 
         int digit = up.charAt(0) - '0';
 
-        int i = (digit - 2) * 3;
+        int from = (digit - 2) * 3;
         if(digit > 7) {
-            i+=1;
+            from+=1;
         }
 
-        int to = i + 3;
+        int to = from + 3;
 
         if(digit == 7 || digit == 9) {
             to += 1;
@@ -45,8 +45,8 @@ public class PhonePad {
 
         // local to this call
         ArrayList<String> list = new ArrayList<>();
-        for (; i < to; i++) {
-            char ch = (char) ('a' + i);
+        for (; from < to; from++) {
+            char ch = (char) ('a' + from);
             list.addAll(phoneAl(p + ch, up.substring(1)));
         }
         return list;
