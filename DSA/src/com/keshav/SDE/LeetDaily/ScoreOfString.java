@@ -1,4 +1,4 @@
-package com.keshav.SDE;
+package com.keshav.SDE.LeetDaily;
 
 //https://leetcode.com/problems/score-of-a-string/submissions/1273810102/?envType=daily-question&envId=2024-06-01
 public class ScoreOfString {

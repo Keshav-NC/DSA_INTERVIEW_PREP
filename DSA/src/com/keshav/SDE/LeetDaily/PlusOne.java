@@ -1,4 +1,4 @@
-package com.keshav.SDE;
+package com.keshav.SDE.LeetDaily;
 
 import java.util.ArrayList;
 import java.util.Arrays;
