@@ -5,7 +5,8 @@ import java.util.Arrays;
 
 public class PhonePad {
     public static void main(String[] args) {
-        System.out.println(phoneAl("", "79"));
+        String str = "";
+        System.out.println(phoneAl("", str));
     }
 
     static void phonePad (String p, String up) {
