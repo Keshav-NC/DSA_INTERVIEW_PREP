@@ -2,12 +2,13 @@ package com.keshav.Recursion.Questions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Subsequences {
     public static void main(String[] args) {
-        subSequence("", "abc");
+        subSequence("", "aab");
 //        subSeqAscii("", "abc");
-        System.out.println(subSeqAsciiAL("", "abc"));
+//        System.out.println(subSeqAsciiAL("", "abc"));
 
     }
 

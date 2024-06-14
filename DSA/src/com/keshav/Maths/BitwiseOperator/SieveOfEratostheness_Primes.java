@@ -2,7 +2,7 @@ package com.keshav.Maths.BitwiseOperator;
 
 public class SieveOfEratostheness_Primes {
     public static void main(String[] args) {
-        int num = 37;
+        int num = 10;
         boolean[] primes = new boolean[num+1];
         sieve(num, primes);
     }
