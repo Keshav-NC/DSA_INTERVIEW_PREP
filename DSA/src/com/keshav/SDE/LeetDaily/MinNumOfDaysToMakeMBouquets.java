@@ -13,31 +13,56 @@ public class MinNumOfDaysToMakeMBouquets {
         System.out.println(minDays(bloomDay, m , k));
     }
 
-    static int minDays (int[] bloomDay, int m, int k) {
+    static int[] findRange (int[] bloomDay) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
 
-        int total = 0;
-
-        HashSet<Integer> set = new HashSet<>();
         for (int day : bloomDay) {
-            set.add(day);
+            min = Math.min(min, day);
+            max = Math.max(max, day);
         }
-        List<Integer> list = new ArrayList<>(set);
-        int count = 0;
-        for (int i=0;i<list.size();i++) {
-            for (int j=0;j<bloomDay.length;j++) {
-                if (list.get(i) == bloomDay[i]) {
-                    count++;
-                } else {
-                    count=0;
-                }
+        return new int[] {min, max};
+    }
+
+    static int minDays (int[] bloomDay, int m, int k) {
+        int[] range = findRange(bloomDay);
+
+        int start = range[0];
+        int end = range[1];
+        int ans = 0;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (isPossible(mid, bloomDay, m, k)) {
+                ans = mid;
+                end = mid - 1;
+            } else {
+                start = mid + 1;
             }
-            if (count == m) {
+        }
+        return ans;
+    }
+
+    private static boolean isPossible(int midDay, int[] bloomDay, int m, int k) {
+        int total = 0;
+        int count = 0;
+
+        for (int i=0;i<bloomDay.length;i++) {
+            if (bloomDay[i] <= midDay) {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == k) {
                 total++;
                 count = 0;
             }
+
             if (total >= m) {
-                return 
+                return true;
             }
         }
+        return false;
     }
 }
