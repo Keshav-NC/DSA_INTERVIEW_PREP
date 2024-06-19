@@ -30,7 +30,7 @@ public class Subsequences {
 
     static ArrayList<String> subSequenceAL (String processed, String unprocessed) {
         if (unprocessed.isEmpty()) {
-            //  if str is empty, just add in list and return
+            //  if str is empty, just add processed in list and return
             ArrayList<String> list = new ArrayList<>();
             list.add(processed);
             return list;
