@@ -7,6 +7,8 @@ public class BSCeil {
         int ans = ceilBS(nums, target);
         System.out.println(nums[ans]);
     }
+
+    // ceil --> smaller number in the array >= target
     static int ceilBS(int[] nums, int target) {
         int start = 0;
         int end = nums.length-1;

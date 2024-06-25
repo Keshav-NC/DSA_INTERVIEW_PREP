@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Permutations {
     public static void main(String[] args) {
         String str = "abc";
+        permutation("", str);
 //        System.out.println(permuteList("", str));
 //
 //        System.out.println(permutationCount("", "abc"));
@@ -26,7 +27,7 @@ public class Permutations {
 
         for (int i = 0; i <= p.length(); i++) {
             String first = p.substring(0, i);
-            String second = p.substring(i);
+            String second = p.substring(i, p.length());
             permutation(first + ch + second, up.substring(1));
         }
     }

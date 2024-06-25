@@ -9,6 +9,8 @@ public class BSFloor {
 
 
     }
+
+    // floor --> larger number in the array <= target
     static int floorBS(int[] nums, int target) {
         int start = 0;
         int end = nums.length-1;

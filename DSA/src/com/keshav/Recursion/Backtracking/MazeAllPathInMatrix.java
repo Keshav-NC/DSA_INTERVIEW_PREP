@@ -10,7 +10,7 @@ public class MazeAllPathInMatrix {
                 {true, true, true},
         };
         allPathMat("", board, 0, 0,1 ,new int[board.length][board[0].length]);
-        System.out.println(Arrays.toString(board));
+//        System.out.println(Arrays.toString(board));
     }
 
     private static void allPathMat(String p, boolean[][] maze, int row, int col, int step ,int[][] paths) {

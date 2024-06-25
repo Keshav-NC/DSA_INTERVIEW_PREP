@@ -6,7 +6,7 @@ import java.util.List;
 public class DiceCombination {
     public static void main(String[] args) {
 //        dice("", 4);
-        System.out.println(diceAL("", 7));
+        System.out.println(diceAL("", 4));
     }
     // pattern processed and unprocessed
     static void dice (String p, int target) {
@@ -32,4 +32,6 @@ public class DiceCombination {
         }
         return list;
     }
+
+    // output --> [1111, 112, 121, 13, 211, 22, 31, 4]
 }
