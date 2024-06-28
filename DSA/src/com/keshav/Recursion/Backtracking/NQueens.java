@@ -55,7 +55,7 @@ public class NQueens {
             }
         }
 
-        // diagonal left
+        //diagonal right
         int maxRight = Math.min (row, board.length - col - 1);
         for (int i = 1; i <= maxRight; i++) {
             // if true, then it is not safe to place queen here
