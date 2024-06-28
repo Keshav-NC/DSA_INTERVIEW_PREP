@@ -1,6 +1,7 @@
 package com.keshav.Recursion.Backtracking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class NQueens {
@@ -37,7 +38,7 @@ public class NQueens {
     private static boolean isSafe(boolean[][] board, int row, int col) {
         // check vertical row
         for (int i = 0; i < row; i++) {
-            // if true, then it is not safe to place queen here
+            // if true means already queen is present here, then it is not safe to place queen here
             // increment until we find safe place to place queen
             if (board[i][col]) {
                 return false;
@@ -78,13 +79,6 @@ public class NQueens {
                 }
             }
             System.out.println();
-        }
-    }
-
-
-    static ArrayList<String> queensAL (boolean[][] board, int row) {
-        if (row == board.length) {
-            display(board);
         }
     }
 }
