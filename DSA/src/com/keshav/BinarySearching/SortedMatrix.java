@@ -14,14 +14,16 @@ public class SortedMatrix {
 
     // search in the row provided between the cols provided
     static int[] bs (int[][] matrix, int target, int row, int cStart, int cEnd) {
-        int mid = cStart + (cEnd - cStart) / 2;
-        if (target == matrix[row][mid]) {
-            return new int[] {row, mid};
-        }
-        if (target < matrix[row][mid]) {
-            cEnd = mid - 1;
-        } else {
-            cStart = mid + 1;
+        while (cStart <= cEnd) {
+            int mid = cStart + (cEnd - cStart) / 2;
+            if (target == matrix[row][mid]) {
+                return new int[]{row, mid};
+            }
+            if (target < matrix[row][mid]) {
+                cEnd = mid - 1;
+            } else {
+                cStart = mid + 1;
+            }
         }
         return new int[] {-1, -1};
     }
@@ -44,18 +46,18 @@ public class SortedMatrix {
             if (target == matrix[rMid][cMid]) {
                 return new int[] {rMid, cMid};
             }
-            if (target < matrix[rMid][cMid]) {
+            if (target < matrix[rMid][cMid]) { // ignore below rows
                 rEnd = rMid;
-            } else {
+            } else { // ignore above rows
                 rStart = rMid;
             }
         }
         // now we have 2 rows
         // check whether the target is in the col of 2 rows
-        if (matrix[rStart][cMid] == target) {
+        if (target == matrix[rStart][cMid]) {
             return new int[] {rStart, cMid};
         }
-        if (matrix[rStart + 1][cMid] == target) {
+        if (target == matrix[rStart + 1][cMid]) {
             return new int[] {rStart + 1, cMid};
         }
 
