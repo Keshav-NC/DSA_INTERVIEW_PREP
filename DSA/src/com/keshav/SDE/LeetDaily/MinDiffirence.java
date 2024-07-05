@@ -17,17 +17,22 @@ public class MinDiffirence {
         Arrays.sort(nums);
 
         int ans = Integer.MAX_VALUE;
-        // case 1 --> all largest 3
-        ans = Math.min(ans, nums[n-4] - nums[0]);
+//        // case 1 --> all largest 3
+//        ans = Math.min(ans, nums[n-4] - nums[0]);
+//
+//        // case 2 --> 2 large, 1 small
+//        ans = Math.min(ans, nums[n-3] - nums[1]);
+//
+//        // case 3 --> 1 large, 2 small
+//        ans = Math.min(ans, nums[n-2] - nums[2]);
+//
+//        // case 4 --> all smallest 3
+//        ans = Math.min(ans, nums[n-1] - nums[3]);
 
-        // case 2 --> 2 large, 1 small
-        ans = Math.min(ans, nums[n-3] - nums[1]);
 
-        // case 3 --> 1 large, 2 small
-        ans = Math.min(ans, nums[n-2] - nums[2]);
-
-        // case 4 --> all smallest 3
-        ans = Math.min(ans, nums[n-1] - nums[3]);
+        for (int i = 0; i <= 3; i++) {
+            ans = Math.min(ans, nums[n - 4 + i] - nums[i]);
+        }
 
         return ans;
     }

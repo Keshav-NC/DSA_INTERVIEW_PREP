@@ -7,7 +7,7 @@ public class LongestPalindromeCount {
     public static void main(String[] args) {
 //        System.out.println(longPalindromeMap("abccccdd"));
 //        System.out.println(longPalindromeSet("abccccdd"));
-        System.out.println(longPalArr("abccccdd"));
+        System.out.println(longPalArr("aaa"));
     }
 
     static int longPalindromeMap(String str) {
@@ -74,7 +74,7 @@ public class LongestPalindromeCount {
         // Iterate through arr to check the frequencies of character
         for (int ch : arr) {
             // If the character freq is even and not zero, it can from the palindrome
-            if (ch % 2 ==0 && ch != 0) {
+            if (ch % 2 == 0 && ch != 0) {
                 // Add the even count to the total character forming the palindrome
                 count += ch;
             // If character count is odd and not one, can form a palindrome
