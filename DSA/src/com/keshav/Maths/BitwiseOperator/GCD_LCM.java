@@ -2,7 +2,7 @@ package com.keshav.Maths.BitwiseOperator;
 
 public class GCD_LCM {
     public static void main(String[] args) {
-        System.out.println(lcm(3, 7));
+        System.out.println(lcm(4, 4));
     }
 
     static int gcd (int a, int b) {
