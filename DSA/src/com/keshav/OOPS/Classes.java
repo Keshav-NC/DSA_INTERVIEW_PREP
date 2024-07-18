@@ -5,7 +5,7 @@ import java.sql.Struct;
 public class Classes {
     public static void main(String[] args) {
 
-        // create
+        // create data of 5 students {rollno, name, marks}
         int[] numbers = new int[5];
         String[] name = new String[5];
         float[] marks = new float[5];
@@ -52,7 +52,7 @@ class Student {
     // we need one word to access every object --> this
 
 
-    // here keyword "this" is replaced with s1
+    // here keyword "this" will be replaced with s1
     // constructor with no parameters
     Student () {
         this.rno = 60;
