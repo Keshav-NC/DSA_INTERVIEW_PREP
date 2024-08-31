@@ -13,13 +13,12 @@ public class DLL {
     public void insertFirst (int value) {
         Node node = new Node(value);
 
-        if (tail == null) {
-            tail = head;
-        }
-
         node.next = head;
+        node.prev = null;
+        if (head != null) {
+            head.prev = null;
+        }
         head = node;
-        head.prev = null;
 
         size++;
     }
@@ -70,6 +69,49 @@ public class DLL {
         return value;
     }
 
+    // deletion at last
+    public int deleteLast () {
+        int value = tail.next.value;
+        if (size <= 1) {
+            return deleteFirst();
+        }
+        tail = tail.prev;
+        tail.next = null;
+
+        size--;
+        return value;
+    }
+
+    // deletion at particular index
+    public int delete (int index) {
+        Node temp = get(index);
+        int value = temp.next.value;
+
+        if (index == 0) {
+            return deleteFirst();
+        }
+
+        if (index == size - 1) {
+            return deleteLast();
+        }
+
+
+        size--;
+        return value;
+    }
+
+    // find the node for the particular value
+    public Node find (int value) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null; // not found
+    }
+
     // get the reference at a particular node
     public Node get(int index) {
         Node temp = head;
@@ -81,18 +123,23 @@ public class DLL {
         return temp;
     }
 
-    // deletion at last
-    public int deleteLast () {
-        int value = tail.value;
-        if (size <= 1) {
-            deleteFirst();
-            return value;
+    // insert after the given value
+    public void insertAfter(int value, int afterValue) {
+        Node p = find(afterValue);
+        if (p == null) {
+            System.out.println("Does not exist");
+            return;
         }
-        tail = tail.prev;
-        tail.next = null;
 
-        size--;
-        return value;
+        Node node = new Node(value);
+
+        node.next = p.next;
+        p.next = node;
+        node.prev = p;
+
+        if (node.next != null) {
+            node.next.prev = node;
+        }
     }
 
     // display

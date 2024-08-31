@@ -17,7 +17,8 @@ public class SinglyLL {
 
         // insertion at particular index
         list.insert(100, 3);
-        list.display();
+        list.insertRec(1, 20);
+//        list.display();
 
         // delete first
 //        System.out.println(list.deleteFirst() + " deleted");
@@ -26,7 +27,7 @@ public class SinglyLL {
 //        System.out.println(list.deleteLast() + " deleted");
 
         // delete at particular index
-        System.out.println(list.delete(3) + " deleted");
+//        System.out.println(list.delete(3) + " deleted");
 
         list.display(); // 19 7 5 3
 

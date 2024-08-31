@@ -15,6 +15,7 @@ public class DoublyLL {
 
         // insertion at particular index
         list.insert(30, 3);
+        list.insertAfter(35, 10);
 
         list.display();
 
@@ -22,7 +23,10 @@ public class DoublyLL {
 //        System.out.println(list.deleteFirst() + " deleted");
 
         // deletion at last
-        System.out.println(list.deleteLast() + " deleted");
+//        System.out.println(list.deleteLast() + " deleted");
+
+        // deletion at particular index
+//        System.out.println(list.delete(2) + " deleted");
 
         list.display(); // 60 50 ..... 10
     }

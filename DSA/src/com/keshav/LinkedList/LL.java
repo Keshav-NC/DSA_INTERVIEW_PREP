@@ -126,6 +126,23 @@ public class LL {
         return node;
     }
 
+    // insert using recursion
+    public void insertRec (int index, int value) {
+        head = insertRec(index, value, head);
+    }
+
+
+    private Node insertRec (int index, int value, Node temp) {
+        if (index == 0) {
+            Node node = new Node(value, temp);
+            size++;
+            return node;
+        }
+
+        temp.next = insertRec(index-1, value, temp.next);
+        return temp;
+    }
+
     // display
     public void display() {
         Node temp = head;
@@ -134,6 +151,46 @@ public class LL {
             temp = temp.next;
         }
         System.out.println("END");
+    }
+
+
+    // Questions
+
+    public void duplicates () {
+        Node temp = head;
+
+        while (temp.next != null) {
+            if (temp.value != temp.next.value) {
+                temp= temp.next;
+            } else {
+                temp.next = temp.next.next;
+            }
+        }
+    }
+
+    public LL merge (LL list1, LL list2) {
+        Node first = list1.head;
+        Node second = list2.head;
+        LL merged = new LL();
+        while (first != null && second != null) {
+            if (first.value < second.value) {
+                insertLast(first.value);
+                first = first.next;
+            } else {
+                insertLast(second.value);
+                second = second.next;
+            }
+        }
+
+        while (first != null) {
+            merged.insertLast(first.value);
+            first = first.next;
+        }
+        while (second != null) {
+            merged.insertLast(second.value);
+            second = second.next;
+        }
+        return merged;
     }
 
     class Node {
