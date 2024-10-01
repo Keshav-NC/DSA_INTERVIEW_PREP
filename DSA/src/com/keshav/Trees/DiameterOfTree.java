@@ -116,7 +116,7 @@ public class DiameterOfTree {
     }
 
     private int findLeftNodes(Node root) {
-        int count = 0;
+        int count = 1; // root node
         while (root != null) {
             ++count;
             root = root.left;
@@ -124,7 +124,7 @@ public class DiameterOfTree {
         return count;
     }
     private int findRightNodes(Node root) {
-        int count = 0;
+        int count = 1; // root node
         while (root != null) {
             ++count;
             root = root.right;
