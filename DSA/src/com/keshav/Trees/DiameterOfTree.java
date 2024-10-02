@@ -1,6 +1,7 @@
 package com.keshav.Trees;
 
 import javax.imageio.ImageTranscoder;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DiameterOfTree {
@@ -130,5 +131,65 @@ public class DiameterOfTree {
             root = root.right;
         }
         return count;
+    }
+
+    // Boundary traversal of BT
+    public ArrayList<Integer> boundary (Node root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        if (!isLeaf(root)) {
+            res.add(root.val);
+        }
+        insertLeftBoundary(root, res);
+        insertLeafBoundary(root, res);
+        insertRightBoundary(root, res);
+
+        return res;
+    }
+
+    private boolean isLeaf(Node node) {
+        return (node.left == null && node.right == null);
+    }
+
+    public void insertLeftBoundary (Node root, ArrayList<Integer> res) {
+        Node leftNode = root.left;
+
+        while (leftNode != null) {
+            if (isLeaf(leftNode)) {
+                break;
+            }
+            res.add(leftNode.val);
+            if (leftNode.left != null) {
+                leftNode = leftNode.left;
+            } else {
+                leftNode = leftNode.right;
+            }
+        }
+    }
+
+    public void insertLeafBoundary (Node root, ArrayList<Integer> res) {
+        if (root == null) {
+            return;
+        }
+        if (isLeaf(root)) {
+            res.add(root.val);
+        }
+        insertLeafBoundary(root.left, res);
+        insertLeafBoundary(root.right, res);
+    }
+
+    public void insertRightBoundary (Node root, ArrayList<Integer> res) {
+        Node rightNode = root.right;
+
+        while (rightNode != null) {
+            if (isLeaf(rightNode)) {
+                break;
+            }
+            res.add(rightNode.val);
+            if (rightNode.right != null) {
+                rightNode = rightNode.right;
+            } else {
+                rightNode = rightNode.left;
+            }
+        }
     }
 }
