@@ -14,7 +14,9 @@ public class LowestCommonAncestor {
     }
 
     /*
-        The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+        The lowest common ancestor is defined between two nodes p and q
+        as the lowest node in T that has both p and q as descendants
+        (where we allow a node to be a descendant of itself).”
      */
     public Node LCA(Node root, Node p, Node q) {
         // if the target reached return the target
