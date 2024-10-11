@@ -39,7 +39,7 @@ class NewStudent implements Comparable<NewStudent> {
 
 public class MyPriorityQueue {
     public static void main(String[] args) {
-//        PriorityQueue<Integer> minPq = new PriorityQueue<>(); // default -> min PQ
+//        PriorityQueue<Integer> minPq = new PriorityQueue<>(); // default -> min PQ --> minHeap
 //        minPq.offer(1);
 //        minPq.offer(5);
 //        minPq.offer(0);
@@ -47,7 +47,7 @@ public class MyPriorityQueue {
 //        minPq.offer(2);
 //        System.out.println("Highest priority element in minPQ: " + minPq.peek());
 //
-//        PriorityQueue<Integer> maxPq = new PriorityQueue<>(Collections.reverseOrder()); // max PQ
+//        PriorityQueue<Integer> maxPq = new PriorityQueue<>(Collections.reverseOrder()); // max PQ --> maxHeap
 //        maxPq.offer(1);
 //        maxPq.offer(5);
 //        maxPq.offer(0);
