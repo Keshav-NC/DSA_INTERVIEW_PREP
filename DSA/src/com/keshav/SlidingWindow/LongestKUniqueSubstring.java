@@ -1,5 +1,7 @@
 package com.keshav.SlidingWindow;
 
+import java.util.HashMap;
+
 public class LongestKUniqueSubstring {
     public static void main(String[] args) {
         String s = "aabacbebebe";
