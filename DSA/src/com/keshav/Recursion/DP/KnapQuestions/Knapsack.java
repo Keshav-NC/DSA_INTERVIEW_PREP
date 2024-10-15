@@ -1,5 +1,7 @@
 package com.keshav.Recursion.DP.KnapQuestions;
 
+import java.util.Arrays;
+
 public class Knapsack {
     public static void main(String[] args) {
         int[] weight = {1, 3, 4, 5};
@@ -93,6 +95,9 @@ public class Knapsack {
                     t[i][j] = t[i-1][j];
                 }
             }
+        }
+        for (int[] row : t) {
+            System.out.println(Arrays.toString(row));
         }
         // at last ans will be at last row and col
         return t[n][W];
