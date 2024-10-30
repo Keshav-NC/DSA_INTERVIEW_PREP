@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class TrappingRainWater {
     public static void main(String[] args) {
-        int[] heights = {4, 2, 0, 3, 2, 5};
+        int[] heights = {2,3,3,2,3,1};
         System.out.println(waterArea(heights));
     }
     static int n;

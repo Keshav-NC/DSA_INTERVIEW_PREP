@@ -39,6 +39,8 @@ public class LargestHistogram {
         n = heights.length;
         int[] nextSmaller = findNextSmaller(heights);
         int[] prevSmaller = findPrevSmaller(heights);
+        System.out.println(Arrays.toString(nextSmaller));
+        System.out.println(Arrays.toString(prevSmaller));
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) { // O(N)
             int height = heights[i];

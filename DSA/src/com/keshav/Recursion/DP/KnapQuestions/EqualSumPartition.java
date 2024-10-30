@@ -46,6 +46,9 @@ public class EqualSumPartition {
                 }
             }
         }
+        for (boolean[] row : t) {
+            System.out.println(Arrays.toString(row));
+        }
         return t[n][sum];
     }
 }

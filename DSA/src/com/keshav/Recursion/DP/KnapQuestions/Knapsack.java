@@ -10,6 +10,7 @@ public class Knapsack {
         int n = weight.length;
         // Recursive code
 //        System.out.println(maxProfitRec(weight, value, W, n));
+
         // Recursive Code + dp
         int[][] dp = new int[n+1][W+1];
         // fill with -1=
@@ -18,10 +19,14 @@ public class Knapsack {
                 dp[i][j] = -1;
             }
         }
-//        System.out.println(maxProfitDP(weight, value, W, n, dp));
-        // Tabulation
+        System.out.println(maxProfitDP(weight, value, W, n, dp));
+        for (int[] row : dp) {
+            System.out.println(Arrays.toString(row));
+        }
 
-        System.out.println(maxProfitTabulation(weight, value, W, n));
+//        // Tabulation
+//
+//        System.out.println(maxProfitTabulation(weight, value, W, n));
     }
 
     // Recursive code

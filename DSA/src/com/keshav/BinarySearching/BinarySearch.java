@@ -29,7 +29,7 @@ public class BinarySearch {
         int end = arr.length - 1;
 
         while (start <= end) {
-//            int mid = (start + end) / 2; // if size is larger than it will exceed more than int range
+//            int mid = (start + end) / 2; // if size is larger than int it will exceed more than int range
             int mid = start + (end - start) / 2;
 
             if (target < arr[mid]) {
