@@ -1,5 +1,7 @@
 package com.keshav.Recursion.Backtracking;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MazeAllPathInMatrix {
@@ -10,8 +12,8 @@ public class MazeAllPathInMatrix {
                 {true, true, true},
         };
         allPathMat("", board, 0, 0,1 ,new int[board.length][board[0].length]);
-//        System.out.println(Arrays.toString(board));
     }
+
 
     private static void allPathMat(String p, boolean[][] maze, int row, int col, int step ,int[][] paths) {
         if (row == maze.length-1 && col == maze[0].length-1) {

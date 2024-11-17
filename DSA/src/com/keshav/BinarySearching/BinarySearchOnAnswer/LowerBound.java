@@ -1,8 +1,17 @@
 package com.keshav.BinarySearching.BinarySearchOnAnswer;
 
+import java.util.ArrayList;
+
 public class LowerBound {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 3, 5, 8, 8, 10, 10, 12};
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(4);
+        list.set(2, 3);
+        System.out.println(list.get(2-1));
+        System.out.println(list);
         int target = 9;
         System.out.println(lowerBound(nums, target));
     }

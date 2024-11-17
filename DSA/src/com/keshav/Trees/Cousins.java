@@ -44,7 +44,6 @@ public class Cousins {
                     }
                     queue.offer(node.left);
                 }
-
                 if (node.right != null) {
                     if (node.right.val == x || node.right.val == y) {
                         ++childCount;

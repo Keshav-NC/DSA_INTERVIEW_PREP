@@ -2,9 +2,8 @@ package com.keshav.BinarySearching.BinarySearchOnAnswer;
 
 public class UpperBound {
     public static void main(String[] args) {
-//        int[] nums = {2, 3, 6, 7, 8 ,8, 11, 11, 11, 12};
-        int[] nums = {1,3,5,6};
-        int target = 2;
+        int[] nums = {1, 2, 3, 3, 5, 8, 8, 10, 10, 12};
+        int target = 9;
         System.out.println(upperBound(nums, target));
     }
     // Upper Bound, smaller index such that arr[index] > target

@@ -1,14 +1,22 @@
 package com.keshav.Recursion.Questions;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Permutations {
     public static void main(String[] args) {
-        String str = "abc";
-        permutation("", str);
+        String str = "ljr";
+        StringBuilder sb =  new StringBuilder("ljr");
+        sb.setCharAt(0, 'r');
+        sb.setCharAt(2, 'l');
+        System.out.println(sb);
+//        permutation("", str);
 //        System.out.println(permuteList("", str));
 //
 //        System.out.println(permutationCount("", "abc"));
+        List<String> ans = new ArrayList<>();
+        permutationUnique("", str, ans);
+        Collections.sort(ans);
+        System.out.println(ans);
     }
 
     /*
@@ -62,6 +70,23 @@ public class Permutations {
             count = count + permutationCount(p.substring(0, i) + up.charAt(0) + p.substring(i), up.substring(1));
         }
         return count;
+    }
+
+    static void permutationUnique(String p, String up, List<String> ans) {
+        if (up.isEmpty()) {
+            ans.add(p);
+            return;
+        }
+        HashSet<Character> set = new HashSet<>();
+        for (int i = 0; i < up.length(); i++) {
+            char ch = up.charAt(i);
+                if (!set.contains(ch)) {
+                    set.add(ch);
+                    String left = up.substring(0, i);
+                    String right = up.substring(i + 1);
+                    permutationUnique(p + ch, left + right, ans);
+                }
+        }
     }
 
 }
