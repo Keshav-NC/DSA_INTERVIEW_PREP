@@ -1,9 +1,7 @@
 package com.keshav.Stacks.Questions;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 public class LongestValidParenthesis {
     public static void main(String[] args) {
@@ -30,10 +28,10 @@ public class LongestValidParenthesis {
         }
         ArrayList<Integer> list = new ArrayList<>();
         while (!stack.isEmpty()) {
-            list.addFirst(stack.pop());
+            list.add(0, stack.pop());
         }
-        list.addFirst(-1);;
-        list.addLast(s.length());
+        list.add(0, -1);
+        list.add(list.size(), s.length());
         for (int i = 0; i < list.size() - 1; i++) {
             max = Math.max(max, list.get(i+1) - list.get(i) - 1);
         }
