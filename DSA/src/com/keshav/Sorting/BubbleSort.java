@@ -1,6 +1,6 @@
 package com.keshav.Sorting;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class BubbleSort {
     public static void main(String[] args) {
