@@ -3,7 +3,7 @@ package com.keshav.Recursion;
 public class ReverseNumber {
     public static void main(String[] args) {
         int num = 1234;
-        System.out.println(reverseNumber2(num));
+        System.out.println(reverseNumber3(num));
     }
 
     // Method 1
@@ -32,6 +32,11 @@ public class ReverseNumber {
         return helper(num, digits);
     }
 
+    static int reverseNumber3(int num) {
+        StringBuilder sb = new StringBuilder(Integer.toString(num));
+        sb.reverse();
+        return Integer.parseInt(sb.toString());
+    }
 
 
 }

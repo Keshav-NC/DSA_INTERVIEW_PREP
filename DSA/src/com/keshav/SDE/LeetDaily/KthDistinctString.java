@@ -7,7 +7,7 @@ public class KthDistinctString {
     public static void main(String[] args) {
         String[] arr = {"d","b","c","b","c","a"};
         int k = 2;
-        System.out.println(kthDistinct(arr, k));
+        System.out.println(kthDistinctArr(arr, k));
 
     }
 
@@ -24,6 +24,24 @@ public class KthDistinctString {
             }
             if (count == k) {
                 return s;
+            }
+        }
+        return "";
+    }
+
+    public static String kthDistinctArr(String[] arr, int k) {
+        int[][] freq = new int[26][2];
+        int n = arr.length;
+        for (int i = 0; i < n; ++i) {
+            char ch = arr[i].charAt(0);
+            ++freq[ch - 'a'][0];
+            freq[i][1] = i;
+        }
+        char ans;
+        for (int i = 0; i < 26; ++i, --k) {
+            if (freq[i][0] == 1 && k > 0) {
+                ans = (char)(i + 'a');
+                return ans + "";
             }
         }
         return "";

@@ -27,7 +27,7 @@ public class RottenOranges {
         int time = 0;
         for (;!queue.isEmpty(); ++time) {
             int size = queue.size();
-            for (int i = 0; i < size; ++i) {
+            for (int i = 0; i < size && !queue.isEmpty(); ++i) {
                 int[] rotten = queue.poll();
                 int row = rotten[0];
                 int col = rotten[1];

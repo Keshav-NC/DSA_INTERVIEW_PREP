@@ -7,21 +7,17 @@ import java.util.Queue;
 
 public class DetectCycle {
     public static void main(String[] args) {
-//        [[1], [0,2,4], [1,3], [2,4], [1,3]]
+//        [[1,2],[1,3],[2,3]]
         List<Integer>[] adj = new List[5];
         for (int i = 0; i < adj.length; i++) {
             adj[i] = new ArrayList<>();
         }
         adj[0].add(1);
-        adj[1].add(0);
-        adj[1].add(2);
-        adj[1].add(4);
-        adj[2].add(1);
+        adj[0].add(2);
+        adj[1].add(1);
+        adj[1].add(3);
+        adj[2].add(2);
         adj[2].add(3);
-        adj[3].add(2);
-        adj[3].add(4);
-        adj[4].add(1);
-        adj[4].add(3);
         System.out.println(isCycle(adj));
     }
 
@@ -68,7 +64,7 @@ public class DetectCycle {
 
             for (int neighbour : adj[node]) {
                 if (neighbour == parent) continue; // skip
-                if (visited[neighbour]) return true; // cycle exits
+                if (visited[neighbour]) return true; // cycle exists
                 else {
                     queue.offer(new int[] {neighbour, node});
                     visited[neighbour] = true;
